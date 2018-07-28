@@ -1,0 +1,157 @@
+/* animation */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;filter: alpha(opacity=0);}
+    to {opacity: 1;filter: alpha(opacity=100);}
+}
+@keyframes fadeIn {
+    from {opacity: 0;filter: alpha(opacity=0);}
+    to {opacity: 1;filter: alpha(opacity=100);}
+}
+
+* {
+    /* tabs and all site images appear nicer with this code. Normally I wouldnt have this declaration so generic but would target specific elements */
+    -webkit-animation: fadeIn 0.5s;
+    animation: fadeIn 0.5s;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: white;
+    background-color: dimgrey;
+    min-height: 100vh;
+    /* unfortunately couldnt find any use for flex. Bootstrap was enough for this basic template */
+    /*display: flex;*/
+    /*flex-direction: column;*/
+}
+
+/* set the number26 watermark */
+body:after {
+    content: "";
+    /* background: url("images/number26_logo.png") no-repeat center center; */
+    background-size: 50%;
+    opacity: 0.1;
+    filter: alpha(opacity=10);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+a, a:hover, a:focus,
+.btn-link, .btn-link:focus, .btn-link:hover {color: white}
+
+a:hover, a:focus,
+.btn-link:focus, .btn-link:hover {text-decoration: none}
+
+input {text-align: center}
+
+.tab-pane {
+    height: 90vh;
+    padding-top: 80px;
+}
+
+.backbutton {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+}
+
+.canceltransaction {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+}
+
+form, .alert {
+    margin: 50px auto 0 auto;
+    width: 460px;
+}
+
+/* ==========================================================================
+   TAB 1 - welcome
+   ========================================================================== */
+
+h1 {
+    font-size: 60px;
+    text-transform: none;
+}
+
+.slot_wrapper {
+    position: relative;
+    top: 80px;
+}
+
+.slot {
+    border: 10px solid white;
+    border-radius: 6px;
+    height: 30px;
+    width: 120px;
+    margin: 0 auto;
+}
+
+.slot_wrapper i {display: block}
+
+.hand {
+    margin-top: -7px;
+}
+
+@keyframes moveup {
+    from {margin-top: 4%;}
+    to {margin-top: -1%;}
+}
+
+/* credit card animation */
+@keyframes pulse {
+    0% {
+        color: #ffffff;
+    }
+    100% {
+        color: #66cdcc;
+    }
+}
+
+.creditcard {
+    font-size: 100px;
+    -webkit-animation: 1.5s infinite moveup, 3s infinite pulse; /* Chrome, Safari, Opera */
+    animation: 1.5s infinite moveup, 3s infinite reverse pulse;
+    display: inline-block;
+}
+
+.creditcard:hover, .creditcard:focus {
+    color: #66cdcc;
+    text-decoration: none;
+}
+
+/* ==========================================================================
+   TAB 2 - enter PIN
+   ========================================================================== */
+
+.alert {
+    -webkit-transition: opacity 0.5s ease-in;
+    transition: opacity 0.5s ease-in;
+}
+
+.visible {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    display: block !important;
+}
+
+/* ==========================================================================
+   TAB 3 - select amount
+   ========================================================================== */
+
+#selectamount .row > div {
+    cursor: pointer;
+    margin-bottom: 45px;
+}
+
+.btn
+{
+	margin-top: 10px;
+	
+}

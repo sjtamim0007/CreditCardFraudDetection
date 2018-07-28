@@ -1,0 +1,81 @@
+/* animation */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;filter: alpha(opacity=0);}
+    to {opacity: 1;filter: alpha(opacity=100);}
+}
+@keyframes fadeIn {
+    from {opacity: 0;filter: alpha(opacity=0);}
+    to {opacity: 1;filter: alpha(opacity=100);}
+}
+
+* {
+    /* tabs and all site images appear nicer with this code. Normally I wouldnt have this declaration so generic but would target specific elements */
+    -webkit-animation: fadeIn 0.5s;
+    animation: fadeIn 0.5s;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: white;
+    background-color: dimgrey;
+    min-height: 100vh;
+    /* unfortunately couldnt find any use for flex. Bootstrap was enough for this basic template */
+    /*display: flex;*/
+    /*flex-direction: column;*/
+}
+
+/* set the number26 watermark */
+body:after {
+    content: "";
+    background-size: 50%;
+    opacity: 0.1;
+    filter: alpha(opacity=10);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+a, a:hover, a:focus,
+.btn-link, .btn-link:focus, .btn-link:hover {color: white}
+
+a:hover, a:focus,
+.btn-link:focus, .btn-link:hover {text-decoration: none}
+
+input {text-align: center}
+
+.tab-pane {
+    height: 90vh;
+    padding-top: 80px;
+}
+
+
+
+.canceltransaction {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+}
+
+
+
+.btn 
+{
+    height: 80px;
+    width: 50%;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 10px;
+
+}
+
+#selectamount .row > div {
+    cursor: pointer;
+    margin-bottom: 45px;
+}

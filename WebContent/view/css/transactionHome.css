@@ -1,0 +1,102 @@
+/* animation */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;filter: alpha(opacity=0);}
+    to {opacity: 1;filter: alpha(opacity=100);}
+}
+@keyframes fadeIn {
+    from {opacity: 0;filter: alpha(opacity=0);}
+    to {opacity: 1;filter: alpha(opacity=100);}
+}
+
+* {
+    /* tabs and all site images appear nicer with this code. Normally I wouldnt have this declaration so generic but would target specific elements */
+    -webkit-animation: fadeIn 0.5s;
+    animation: fadeIn 0.5s;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: white;
+    background-color: dimgrey;
+    min-height: 100vh;
+    /* unfortunately couldnt find any use for flex. Bootstrap was enough for this basic template */
+    /*display: flex;*/
+    /*flex-direction: column;*/
+}
+
+/* set the number26 watermark */
+body:after {
+    content: "";
+    background: url("images/number26_logo.png") no-repeat center center;
+    background-size: 50%;
+    opacity: 0.1;
+    filter: alpha(opacity=10);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+a, a:hover, a:focus,
+.btn-link, .btn-link:focus, .btn-link:hover {color: white}
+
+a:hover, a:focus,
+.btn-link:focus, .btn-link:hover {text-decoration: none}
+
+input {text-align: center}
+
+.tab-pane {
+    height: 90vh;
+    padding-top: 80px;
+}
+
+.backbutton {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+}
+
+.canceltransaction {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+}
+
+form, .alert {
+    margin: 50px auto 0 auto;
+    width: 460px;
+}
+/* ==========================================================================
+   TAB 3 - select amount
+   ========================================================================== */
+
+#selectamount .row > div {
+    cursor: pointer;
+    margin-bottom: 45px;
+}
+
+/* ==========================================================================
+   TAB 5 - please wait
+   ========================================================================== */
+
+#preparing.active {padding-top: 0;}
+
+.backad {
+    margin-top: 40px;
+    width: 800px;
+}
+
+/* ==========================================================================
+   TAB 6 - money withdrawal
+   ========================================================================== */
+
+#showmethemoney {padding-top: 0;}
+
+.money {
+    margin-top: 40px;
+    width: 700px;
+}
